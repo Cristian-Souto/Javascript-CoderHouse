@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    margin: 0 auto 0;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 0;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 50px;
+    margin-left: auto;
+}
+
+.list-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    padding-right: 1rem;
+}
+
+.link-items {
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 1s;
+    margin-right: 14px;
+}
+
+.link-items:hover {
+    color: #0d6efd;
+    transition: all 1s;
+}
+
+.logo {
+    margin-left: 1.5rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.title-product {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2rem;
+}
+
+span {
+    color: white;
+}
+
+.footer-content {
+    background-color: lightgrey;
+    height: 80px;
+}
+
+.container-main {
+    display: grid;
+    margin: 90px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+/*card estilos general*/
+.card {
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 25px 0px;
+}
+
+.card .card-image .card-title {
+    color: dodgerblue;
+    position: unset;
+}
+
+/*tamaño de imagenes card*/
+img {
+    height: 250px;
+    object-fit: contain;
+}
+
+/*boton carrito*/
+.btn-success {
+    border: none;
+    border-radius: 8px;
+    width: 80px;
+}
+
+.boton-eliminar {
+    background-color: #fff;
+    color: lightseagreen;
+    border: none;
+    font-size: 20px;
+}
+
+/*div carrito de compras*/
+.productoEnCarrito {
+    background-color: #0d6efd;
+    color: aliceblue;
+    border-left: 5px solid lightblue;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Modal mostrar productos agregados*/
+
+.modal-carrito {
+    width: 30rem;
+    height: 10rem;
+    background-color: whitesmoke;
+}
+.modal-container{
+    
+}
+/* hacer visible el modal  */
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
