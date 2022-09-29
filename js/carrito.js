@@ -9,7 +9,8 @@ const agregarProducto = (prodId) => {
   carritoCompras.push(prod);
   actualizarCarrito();
   localStorage.setItem("carrito",JSON.stringify(carritoCompras));
-  console.log(carritoCompras)
+  /* console.log(carritoCompras) */
+
 }
 //vaciar localstorage
 
@@ -36,8 +37,9 @@ const actualizarCarrito = () => {
     const div = document.createElement("div");
     div.classList.add("productoEnCarrito");
     div.innerHTML = `<p>${producto.nombre}</p>
-                     <p>Precio: ${producto.precio}</p> 
-                     <p id="cantidad${producto.id}">Cantidad: ${producto.stock}</p>
+                     <p>Precio: $ ${producto.precio}</p> 
+                     <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>
+                     <p>Total: </p>
                      <button id="eliminar${producto.id}" class="boton-eliminar" ><i class="fa-solid fa-trash-can"></i></button>`;
     contenedorCarrito.appendChild(div)
   })

@@ -109,12 +109,26 @@ img {
 }
 
 .boton-eliminar {
-    background-color: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     color: lightseagreen;
     border: none;
     font-size: 20px;
 }
-
+.btnVaciar,
+.btnCerrar{
+    padding: .5rem .8rem;
+    border: none;
+    background-color: #0d6efd;
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 20px;
+}
+.btnVaciar:hover{
+    opacity:.9;
+}
 /*div carrito de compras*/
 .productoEnCarrito {
     background-color: #0d6efd;
@@ -123,20 +137,29 @@ img {
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
     margin: 5px 0;
-    padding: 5px 10px;
+    padding:6px 14px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content:space-evenly;
 }
-
 /*Modal mostrar productos agregados*/
-
 .modal-carrito {
     width: 30rem;
-    height: 10rem;
+    height:5rem;
     background-color: whitesmoke;
 }
 .modal-container{
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed; 
+    background-color: transparent;
+   /*  width: 100%;
+    height: 100vh; */
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    border-radius: 10px ;
+    z-index: 100;
 }
 /* hacer visible el modal  */
 .modal-active {

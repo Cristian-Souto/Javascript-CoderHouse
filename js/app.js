@@ -21,7 +21,13 @@ const mostrarProductos = (productos) =>{
         console.log(boton);
         
         boton.addEventListener("click",()=>{
-          alert(`Se agrego el produco ${producto.nombre}`)
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `El producto ${producto.nombre} fue agregado`,
+            showConfirmButton: false,
+            timer: 2000
+          })
           agregarProducto(producto);
         })
     });
