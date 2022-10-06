@@ -18,7 +18,6 @@ const mostrarProductos = (productos) =>{
         contenedorProductos.appendChild(div);        
         //selecciona el boton de cada producto atraves de su id
         const boton = document.getElementById(`boton${producto.id}`)
-        console.log(boton);
         
         boton.addEventListener("click",()=>{
           Swal.fire({

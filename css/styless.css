@@ -139,6 +139,7 @@ img {
     margin: 5px 0;
     padding:6px 14px;
     display: flex;
+    flex-direction:row;
     align-items: center;
     justify-content:space-evenly;
 }
