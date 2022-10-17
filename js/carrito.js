@@ -10,18 +10,18 @@ let cantidad;
 const agregarProducto = (prodId) => {
   //verifico si el producto ya existe, si es asi aumento la cantidad 
    //PARA AUMENTAR LA CANTIDAD Y QUE NO SE REPITA
-   const existe = carritoCompras.some (prod => prod.id === prodId) //comprobar si el elemento ya existe en el carro
+   const existe = carritoCompras.some (prod => prod === prodId) //comprobar si el elemento ya existe en el carro
 
    if (existe){ //SI YA ESTÁ EN EL CARRITO, ACTUALIZAMOS LA CANTIDAD
        const prod = carritoCompras.map (prod => { //creamos un nuevo arreglo e iteramos sobre cada curso y cuando
            // map encuentre cual es el q igual al que está agregado, le suma la cantidad
-           if (prod.id === prodId){
+           if (prod === prodId){
                prod.cantidad++
                
            }
        })
    } else { //EN CASO DE QUE NO ESTÉ, AGREGAMOS EL PRODUCTO AL CARRITO
-       const item = productos.find((prod) => prod.id === prodId)//Trabajamos con las ID
+       const item = productos.find((prod) => prod === prodId)//Trabajamos con las ID
        //Una vez obtenida la ID, lo que haremos es hacerle un push para agregarlo al carrito
        carritoCompras.push(item)
    }
@@ -57,7 +57,7 @@ const actualizarCarrito = () => {
   //aumento la cantidad de elementos en el carrito
   contadorCarrito.innerText = carritoCompras.length;
   //usamos el metodo reduce para acumular el precio total de la compra
-  precioTotal.innerText = carritoCompras.reduce((acumulador, prod) => acumulador + prod.precio, 0);
+  precioTotal.innerText = carritoCompras.reduce((acumulador, prod) => acumulador + prod.cantidad * prod.precio, 0);
   console.log(precioTotal)
 }
 
