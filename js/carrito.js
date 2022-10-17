@@ -16,23 +16,13 @@ const agregarProducto = (prodId) => {
   localStorage.setItem("carrito", JSON.stringify(carritoCompras));
   /* console.log(carritoCompras) */
 }
-//vaciar localstorage
 
+//vaciar localstorage y carrito
 btnVaciar.addEventListener("click", () => {
   localStorage.clear();
   carritoCompras = [];
-})
-
-/*eliminar producto
-
-const eliminarProducto = (prodId) =>{
-  const findProd = carritoCompras.find(producto => producto.id === prodId);
-  //obtenemos el indice del prodcuto con indexOf
-  const indice = carritoCompras.indexOf(findProd);
-  carritoCompras.splice(indice,1);
   actualizarCarrito();
-}
-*/
+})
 
 //actualizar carrito
 const actualizarCarrito = () => {
@@ -43,13 +33,23 @@ const actualizarCarrito = () => {
     div.innerHTML = `<p>${producto.nombre}</p>
                      <p>Precio: $ ${producto.precio}</p> 
                      <p id="cantidad${producto.id}">Cantidad: ${producto.cantidad}</p>                
-                     <button id="eliminar${producto.id}" class="boton-eliminar" ><i class="fa-solid fa-trash-can"></i></button>`;
+                     <button onclick="eliminarProducto(${producto.id})" class="boton-eliminar" ><i class="fa-solid fa-trash-can"></i></button>`;
     contenedorCarrito.appendChild(div)
   })
   //aumento la cantidad de elementos en el carrito
   contadorCarrito.innerText = carritoCompras.length;
-
 }
+
+/*eliminar producto*/
+const eliminarProducto = (prodId) =>{
+  const findProd = carritoCompras.find(producto => producto.id === prodId);
+  //obtenemos el indice del prodcuto con indexOf
+  const indice = carritoCompras.indexOf(findProd);
+  carritoCompras.splice(indice,1);
+  actualizarCarrito();
+}
+
+//pedir los productos por fetch 
 const getData = async () => {
   let response = await fetch("./productos.json")
   let data = await response.json()
