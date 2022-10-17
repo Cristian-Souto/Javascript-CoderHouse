@@ -61,7 +61,8 @@ header {
 }
 
 span {
-    color: white;
+    color: #000;
+    font-weight: 600;
 }
 
 .footer-content {
@@ -100,7 +101,9 @@ img {
     height: 250px;
     object-fit: contain;
 }
-
+p{
+    margin: 0;
+}
 /*boton carrito*/
 .btn-success {
     border: none;
@@ -145,9 +148,11 @@ img {
 }
 /*Modal mostrar productos agregados*/
 .modal-carrito {
-    width: 30rem;
-    height:5rem;
-    background-color: whitesmoke;
+    width: 35rem;
+    height:auto;
+    background-color:lightsteelblue;
+    padding: 2rem;
+    border-radius: 8px;
 }
 .modal-container{
     display: flex;
